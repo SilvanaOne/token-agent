@@ -1,0 +1,46 @@
+{
+  "name": "token-agent",
+  "version": "0.1.0",
+  "author": "DFST",
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node --trace-uncaught --loader=ts-node/esm --enable-source-maps -r dotenv/config --require dotenv/config --env-file=.env --test",
+    "test-next": "NODE_NO_WARNINGS=1 node --enable-source-maps -r source-map-support/register -r dotenv/config --require dotenv/config --env-file=.env --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' --test",
+    "test:watch": "node --test --watch test/**/*.test.{js,ts}",
+    "compile": "yarn test ./test/compile-testnet.test.ts && yarn test ./test/compile-mainnet.test.ts",
+    "local": "CHAIN=local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
+    "swap": "CHAIN=local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
+    "local:bc": "CHAIN=local CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
+    "devnet:bc": "CHAIN=devnet CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
+    "local:advanced": "CHAIN=local CLOUD=local COMPILE=false ADVANCED_ADMIN=true WHITELIST_OFFER=true NODE_OPTIONS='--inspect --trace-uncaught' npm run test ./test/worker.test.ts",
+    "lightnet": "CHAIN=lightnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
+    "devnet:local": "CHAIN=devnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
+    "devnet:zkcloudworker": "CHAIN=devnet CLOUD=zkcloudworker COMPILE=false npm run test ./test/worker.test.ts",
+    "zeko:local": "CHAIN=zeko CLOUD=local COMPILE=false  yarn test ./test/worker.test.ts",
+    "zeko:zkcloudworker": "CHAIN=zeko CLOUD=zkcloudworker COMPILE=false yarn test ./test/worker.test.ts",
+    "zeko:zkcloudworker:advanced": "CHAIN=zeko CLOUD=zkcloudworker COMPILE=false ADVANCED_ADMIN=true WHITELIST_OFFER=true yarn test ./test/worker.test.ts"
+  },
+  "node": {
+    "version": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "dotenv": "^16.4.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "yarn@4.7.0",
+  "dependencies": {
+    "@silvana-one/abi": "^0.2.10",
+    "@silvana-one/api": "^0.2.10",
+    "@silvana-one/mina-prover": "^0.2.10",
+    "@silvana-one/mina-utils": "^0.2.10",
+    "@silvana-one/nft": "^0.2.10",
+    "@silvana-one/prover": "^0.2.10",
+    "@silvana-one/storage": "^0.2.10",
+    "@silvana-one/token": "^0.2.10",
+    "@silvana-one/upgradable": "^0.2.10",
+    "o1js": "^2.3.0"
+  }
+}

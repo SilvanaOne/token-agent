@@ -45,112 +45,112 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@silvana-one/abi@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/abi@npm:0.2.10"
+"@silvana-one/abi@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/abi@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@silvana-one/api": 0.2.10
-    "@silvana-one/nft": 0.2.10
-    "@silvana-one/storage": 0.2.10
-    "@silvana-one/token": 0.2.10
+    "@silvana-one/api": 1.0.0
+    "@silvana-one/nft": 1.0.0
+    "@silvana-one/storage": 1.0.0
+    "@silvana-one/token": 1.0.0
     o1js: ^2.3.0
-  checksum: 10c0/3761ec7b7f6db204fd2f0f7aaa8bf6d3af73c128208af47780275dcde3fb127703c75ae5b5d1101d529be493536baa2d748db630ea1131d925833feed2e808a5
+  checksum: 10c0/193c5c67589629bbb054fa5aa3aa1b06c2d3b1945265f064862342ae08589d85dcd010da0b102fef610e90a6410e3d417d725dd1b97014881de2cf65cbc419dd
   languageName: node
   linkType: hard
 
-"@silvana-one/api@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/api@npm:0.2.10"
+"@silvana-one/api@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/api@npm:1.0.0"
   dependencies:
     "@hey-api/client-fetch": "npm:^0.8.2"
-  checksum: 10c0/337838ebaa400e8dae3200031be4d212d5706c8cd8bc0e45adab50dbec97072079d0d39f9f7e8c3608e820ba0661bd40e3552ad930e1bbfbf769b57f67ecfbfd
+  checksum: 10c0/e66bfe21ace2ec8cf4ad3ea5259b23a734bc40982771b4c40a6db6d4846d7c4d9a2ca76358ba83462a75be68935f4ba398457ab6f9fb9fe5538b3a7d3a324607
   languageName: node
   linkType: hard
 
-"@silvana-one/mina-prover@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/mina-prover@npm:0.2.10"
+"@silvana-one/mina-prover@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/mina-prover@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@silvana-one/api": 0.2.10
-    "@silvana-one/mina-utils": 0.2.10
-    "@silvana-one/prover": 0.2.10
+    "@silvana-one/api": 1.0.0
+    "@silvana-one/mina-utils": 1.0.0
+    "@silvana-one/prover": 1.0.0
     o1js: ^2.3.0
-  checksum: 10c0/6612d592dbb82bd8626b0c9ed6504c711679d34fe27ded3c650e3ce2a7fcea70ecccdc414de0c74d341fc4a1cc25d7d4bd29454ad4811781598ba93dff9afad2
+  checksum: 10c0/8035fa1dc46e8d5978a31cf0afa7fdc18ebffb4e7d2d698656afa1e4d6fbcf9e5aaad03f176d0fe6d4251b0cfc7ab2381908422218201f49933757e308499afc
   languageName: node
   linkType: hard
 
-"@silvana-one/mina-utils@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/mina-utils@npm:0.2.10"
+"@silvana-one/mina-utils@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/mina-utils@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
     o1js: ^2.3.0
-  checksum: 10c0/562b0f7880a238654013073d9b44bc3960df6a2e42a089d6137daee8adfda8e6cb3b0fc0b820946576155cd7c8ea56c775cd49d3207fc857285464c4c7709f27
+  checksum: 10c0/6b04be7ec6b444eb3b3954ae38e701115da437d6f760cd6515587e7b832074c6efd866b4cbda448c44ec6101afeed3489a0e2c80f32335375d7df91a20196d56
   languageName: node
   linkType: hard
 
-"@silvana-one/nft@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/nft@npm:0.2.10"
+"@silvana-one/nft@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/nft@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@silvana-one/storage": 0.2.10
-    "@silvana-one/token": 0.2.10
-    "@silvana-one/upgradable": 0.2.10
+    "@silvana-one/storage": 1.0.0
+    "@silvana-one/token": 1.0.0
+    "@silvana-one/upgradable": 1.0.0
     o1js: ^2.3.0
-  checksum: 10c0/9102f44aa1c0c1335320f1fe2966689d0198f26a6aa2138fc411f4272e3e00cd2555af955301c2a777288d1fd14cb8f0903dc1a5f42687c3b902ca18c6eb3772
+  checksum: 10c0/c2231ad81307b576888a16cc35aac2841d5eb98374d757ee5006675398a081ba12054c9d0c7f5c91257afdb0f682187e9295def631fc8c55d8c3c6c2d874bae1
   languageName: node
   linkType: hard
 
-"@silvana-one/prover@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/prover@npm:0.2.10"
+"@silvana-one/prover@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/prover@npm:1.0.0"
   dependencies:
     chalk: "npm:^4.1.2"
-  checksum: 10c0/4cec9d6cb1c104922dc5ebdf36ccdf8b23776ff08db832973f8561e7260466d4053869b28b8a208fb0d4466d4ecf03c02a396539ba11b723ca9c3f7629c61c49
+  checksum: 10c0/193f09d126efe132019ee26916c2109cef8a138aa3f588db3ee731f23c8905663f2a9f015728e594d9e41c03127f3a244ce32a54cb5424d715b89f07e8966a71
   languageName: node
   linkType: hard
 
-"@silvana-one/storage@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/storage@npm:0.2.10"
+"@silvana-one/storage@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/storage@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
     o1js: ^2.3.0
-  checksum: 10c0/92352617cf17740049c803cf20d7347c6179834ea1108cd7967cd8d979c277d1c21e70613b833f4f016b96d784d6815845ddaa9a79c06ca7ed903f4859f1c26e
+  checksum: 10c0/416b7103e53fcbf172a534fee2212123627299fc5dcb7636b3a39e46fad970324f3e214ee777447372a2c92a5ed8bd5732d0dd7b4203b1e2f0a1b197ec761b6e
   languageName: node
   linkType: hard
 
-"@silvana-one/token@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/token@npm:0.2.10"
+"@silvana-one/token@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/token@npm:1.0.0"
   dependencies:
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@silvana-one/api": 0.2.10
-    "@silvana-one/storage": 0.2.10
+    "@silvana-one/api": 1.0.0
+    "@silvana-one/storage": 1.0.0
     o1js: ^2.3.0
-  checksum: 10c0/9cbf816b31869538f30effb718d545b271342144734a768971eb597e7a3996867ed3efc1726656b3e59c4fa4554a8f910efdeef8e261a79ae8bec8c14ed98bb4
+  checksum: 10c0/c84668b4499a9f5c3528d133afb3efb881e3a4002f421c01211e3fb88959162d0fbd1de9deea22b62411ceaf6a65e960fdfcdb598427098a2a15dbb693118040
   languageName: node
   linkType: hard
 
-"@silvana-one/upgradable@npm:^0.2.10":
-  version: 0.2.10
-  resolution: "@silvana-one/upgradable@npm:0.2.10"
+"@silvana-one/upgradable@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@silvana-one/upgradable@npm:1.0.0"
   dependencies:
     mina-signer: "npm:^3.0.7"
     tslib: "npm:^2.8.1"
   peerDependencies:
-    "@silvana-one/storage": 0.2.10
+    "@silvana-one/storage": 1.0.0
     o1js: ^2.3.0
-  checksum: 10c0/d3db63d21676cfd3ecf58c73868475b3f398dfd2e84607ca4636191284986755b7534c47464463be4948df898e3fbde00e7ed52157b8ab77ee22e87144df2331
+  checksum: 10c0/9fc9726917f6c1fc22f2ee32f71a7b260544dd8ca59dc96dcebacee4ae6c62e409c2ac52c0eeb29c7e798af9a338bc9da065bf2ea050163177f16f196e297739
   languageName: node
   linkType: hard
 
@@ -182,12 +182,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.13.9":
-  version: 22.13.9
-  resolution: "@types/node@npm:22.13.9"
+"@types/node@npm:^22.14.1":
+  version: 22.14.1
+  resolution: "@types/node@npm:22.14.1"
   dependencies:
-    undici-types: "npm:~6.20.0"
-  checksum: 10c0/eb6acd04169a076631dcaab712128d492cd17a1b3f10daae4a377f3d439c860c3cd3e32f4ef221671f56183b976ac7c4089f4193457314a88675ead4663438a4
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/d49c4d00403b1c2348cf0701b505fd636d80aabe18102105998dc62fdd36dcaf911e73c7a868c48c21c1022b825c67b475b65b1222d84b704d8244d152bb7f86
   languageName: node
   linkType: hard
 
@@ -279,10 +279,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.4.7":
-  version: 16.4.7
-  resolution: "dotenv@npm:16.4.7"
-  checksum: 10c0/be9f597e36a8daf834452daa1f4cc30e5375a5968f98f46d89b16b983c567398a330580c88395069a77473943c06b877d1ca25b4afafcdd6d4adb549e8293462
+"dotenv@npm:^16.5.0":
+  version: 16.5.0
+  resolution: "dotenv@npm:16.5.0"
+  checksum: 10c0/5bc94c919fbd955bf0ba44d33922a1e93d1078e64a1db5c30faeded1d996e7a83c55332cb8ea4fae5a9ca4d0be44cbceb95c5811e70f9f095298df09d1997dd9
+  languageName: node
+  linkType: hard
+
+"error-stack-parser@npm:^2.0.6":
+  version: 2.1.4
+  resolution: "error-stack-parser@npm:2.1.4"
+  dependencies:
+    stackframe: "npm:^1.3.4"
+  checksum: 10c0/7679b780043c98b01fc546725484e0cfd3071bf5c906bbe358722972f04abf4fc3f0a77988017665bab367f6ef3fc2d0185f7528f45966b83e7c99c02d5509b9
   languageName: node
   linkType: hard
 
@@ -293,20 +302,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isomorphic-fetch@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "isomorphic-fetch@npm:3.0.0"
-  dependencies:
-    node-fetch: "npm:^2.6.1"
-    whatwg-fetch: "npm:^3.4.1"
-  checksum: 10c0/511b1135c6d18125a07de661091f5e7403b7640060355d2d704ce081e019bc1862da849482d079ce5e2559b8976d3de7709566063aec1b908369c0b98a2b075b
-  languageName: node
-  linkType: hard
-
 "js-sha256@npm:^0.9.0":
   version: 0.9.0
   resolution: "js-sha256@npm:0.9.0"
   checksum: 10c0/f20b9245f6ebe666f42ca05536f777301132fb1aa7fbc22f10578fa302717a6cca507344894efdeaf40a011256eb2f7d517b94ac7105bd5cf087fa61551ad634
+  languageName: node
+  linkType: hard
+
+"libsodium-sumo@npm:^0.7.15":
+  version: 0.7.15
+  resolution: "libsodium-sumo@npm:0.7.15"
+  checksum: 10c0/5a1437ccff03c72669e7b49da702034e171df9ff6a4e65698297ab63ad0bf8f889d3dd51494e29418c643143526d8d7f08cbba3929d220334cddbe3e74a1560e
+  languageName: node
+  linkType: hard
+
+"libsodium-wrappers-sumo@npm:^0.7.15":
+  version: 0.7.15
+  resolution: "libsodium-wrappers-sumo@npm:0.7.15"
+  dependencies:
+    libsodium-sumo: "npm:^0.7.15"
+  checksum: 10c0/6da919a13395346d54f2ce4841adda8feb3fbb8a8c378ec5c93b7e6dc6353b379289349e659f3e017a9f1995ef396bf43f89c7ab4aab4e3b5ed85df62407d810
   languageName: node
   linkType: hard
 
@@ -327,33 +342,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1":
-  version: 2.7.0
-  resolution: "node-fetch@npm:2.7.0"
-  dependencies:
-    whatwg-url: "npm:^5.0.0"
-  peerDependencies:
-    encoding: ^0.1.0
-  peerDependenciesMeta:
-    encoding:
-      optional: true
-  checksum: 10c0/b55786b6028208e6fbe594ccccc213cab67a72899c9234eb59dba51062a299ea853210fcf526998eaa2867b0963ad72338824450905679ff0fa304b8c5093ae8
-  languageName: node
-  linkType: hard
-
-"o1js@npm:2.3.0":
-  version: 2.3.0
-  resolution: "o1js@npm:2.3.0"
+"o1js@npm:^2.3.0":
+  version: 2.4.0
+  resolution: "o1js@npm:2.4.0"
   dependencies:
     blakejs: "npm:1.2.1"
     cachedir: "npm:^2.4.0"
-    isomorphic-fetch: "npm:^3.0.0"
     js-sha256: "npm:^0.9.0"
+    libsodium-wrappers-sumo: "npm:^0.7.15"
     reflect-metadata: "npm:^0.1.13"
+    stacktrace-js: "npm:^2.0.2"
     tslib: "npm:^2.3.0"
   bin:
     snarky-run: src/build/run.js
-  checksum: 10c0/2c1c441ad1d16dbf2d98247e95b12adb48f943862c9a2f8d5bbf45244dc11e832172c839de35bc827075aa789d88fc054ad081f468fcbb510b011c0c28f12b5c
+  checksum: 10c0/98b1fdb1e85dca4eea0be1f2933a0c8a0e0a6d197205e79db03a02db7e38c384239b640d9f9a13e7ad42729e77a4080feef566c857b819f9dd2d9f6eeedfbddd
   languageName: node
   linkType: hard
 
@@ -361,6 +363,50 @@ __metadata:
   version: 0.1.14
   resolution: "reflect-metadata@npm:0.1.14"
   checksum: 10c0/3a6190c7f6cb224f26a012d11f9e329360c01c1945e2cbefea23976a8bacf9db6b794aeb5bf18adcb673c448a234fbc06fc41853c00a6c206b30f0777ecf019e
+  languageName: node
+  linkType: hard
+
+"source-map@npm:0.5.6":
+  version: 0.5.6
+  resolution: "source-map@npm:0.5.6"
+  checksum: 10c0/beb2c5974bb58954d75e86249953d47ae16f7df1a8531abb9fcae0cd262d9fa09c2db3a134e20e99358b1adba42b6b054a32c8e16b571b3efcf6af644c329f0d
+  languageName: node
+  linkType: hard
+
+"stack-generator@npm:^2.0.5":
+  version: 2.0.10
+  resolution: "stack-generator@npm:2.0.10"
+  dependencies:
+    stackframe: "npm:^1.3.4"
+  checksum: 10c0/c3f6f6c580488e65c0fee806a57f6ae4b79e6435f144be471c1f20328a8d9d8492d4f3beed31840f6dae03e2633325e2764fd3aca5c3126a0639e7c9ddfa45ce
+  languageName: node
+  linkType: hard
+
+"stackframe@npm:^1.3.4":
+  version: 1.3.4
+  resolution: "stackframe@npm:1.3.4"
+  checksum: 10c0/18410f7a1e0c5d211a4effa83bdbf24adbe8faa8c34db52e1cd3e89837518c592be60b60d8b7270ac53eeeb8b807cd11b399a41667f6c9abb41059c3ccc8a989
+  languageName: node
+  linkType: hard
+
+"stacktrace-gps@npm:^3.0.4":
+  version: 3.1.2
+  resolution: "stacktrace-gps@npm:3.1.2"
+  dependencies:
+    source-map: "npm:0.5.6"
+    stackframe: "npm:^1.3.4"
+  checksum: 10c0/0dcc1aa46e364a2b4d1eabce4777fecf337576a11ee3cfc92f07b9ec79ccb76810752431eeb9771289d250d0bb58dbe19a178b96bf7b2e9f773334d03aa96bb9
+  languageName: node
+  linkType: hard
+
+"stacktrace-js@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "stacktrace-js@npm:2.0.2"
+  dependencies:
+    error-stack-parser: "npm:^2.0.6"
+    stack-generator: "npm:^2.0.5"
+    stacktrace-gps: "npm:^3.0.4"
+  checksum: 10c0/9a10c222524ca03690bcb27437b39039885223e39320367f2be36e6f750c2d198ae99189869a22c255bf60072631eb609d47e8e33661e95133686904e01121ec
   languageName: node
   linkType: hard
 
@@ -377,29 +423,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "token-agent@workspace:."
   dependencies:
-    "@silvana-one/abi": "npm:^0.2.10"
-    "@silvana-one/api": "npm:^0.2.10"
-    "@silvana-one/mina-prover": "npm:^0.2.10"
-    "@silvana-one/mina-utils": "npm:^0.2.10"
-    "@silvana-one/nft": "npm:^0.2.10"
-    "@silvana-one/prover": "npm:^0.2.10"
-    "@silvana-one/storage": "npm:^0.2.10"
-    "@silvana-one/token": "npm:^0.2.10"
-    "@silvana-one/upgradable": "npm:^0.2.10"
-    "@types/node": "npm:^22.13.9"
-    dotenv: "npm:^16.4.7"
-    o1js: "npm:2.3.0"
+    "@silvana-one/abi": "npm:^1.0.0"
+    "@silvana-one/api": "npm:^1.0.0"
+    "@silvana-one/mina-prover": "npm:^1.0.0"
+    "@silvana-one/mina-utils": "npm:^1.0.0"
+    "@silvana-one/nft": "npm:^1.0.0"
+    "@silvana-one/prover": "npm:^1.0.0"
+    "@silvana-one/storage": "npm:^1.0.0"
+    "@silvana-one/token": "npm:^1.0.0"
+    "@silvana-one/upgradable": "npm:^1.0.0"
+    "@types/node": "npm:^22.14.1"
+    dotenv: "npm:^16.5.0"
+    o1js: "npm:^2.3.0"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.8.2"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
-
-"tr46@npm:~0.0.3":
-  version: 0.0.3
-  resolution: "tr46@npm:0.0.3"
-  checksum: 10c0/047cb209a6b60c742f05c9d3ace8fa510bff609995c129a37ace03476a9b12db4dbf975e74600830ef0796e18882b2381fb5fb1f6b4f96b832c374de3ab91a11
-  languageName: node
-  linkType: hard
 
 "ts-node@npm:^10.9.2":
   version: 10.9.2
@@ -446,30 +485,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.8.2":
-  version: 5.8.2
-  resolution: "typescript@npm:5.8.2"
+"typescript@npm:^5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/5c4f6fbf1c6389b6928fe7b8fcd5dc73bb2d58cd4e3883f1d774ed5bd83b151cbac6b7ecf11723de56d4676daeba8713894b1e9af56174f2f9780ae7848ec3c6
+  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.8.2#optional!builtin<compat/typescript>":
-  version: 5.8.2
-  resolution: "typescript@patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/5448a08e595cc558ab321e49d4cac64fb43d1fa106584f6ff9a8d8e592111b373a995a1d5c7f3046211c8a37201eb6d0f1566f15cdb7a62a5e3be01d087848e2
+  checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.20.0":
-  version: 6.20.0
-  resolution: "undici-types@npm:6.20.0"
-  checksum: 10c0/68e659a98898d6a836a9a59e6adf14a5d799707f5ea629433e025ac90d239f75e408e2e5ff086afc3cace26f8b26ee52155293564593fbb4a2f666af57fc59bf
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
@@ -477,30 +516,6 @@ __metadata:
   version: 3.0.1
   resolution: "v8-compile-cache-lib@npm:3.0.1"
   checksum: 10c0/bdc36fb8095d3b41df197f5fb6f11e3a26adf4059df3213e3baa93810d8f0cc76f9a74aaefc18b73e91fe7e19154ed6f134eda6fded2e0f1c8d2272ed2d2d391
-  languageName: node
-  linkType: hard
-
-"webidl-conversions@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "webidl-conversions@npm:3.0.1"
-  checksum: 10c0/5612d5f3e54760a797052eb4927f0ddc01383550f542ccd33d5238cfd65aeed392a45ad38364970d0a0f4fea32e1f4d231b3d8dac4a3bdd385e5cf802ae097db
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:^3.4.1":
-  version: 3.6.20
-  resolution: "whatwg-fetch@npm:3.6.20"
-  checksum: 10c0/fa972dd14091321d38f36a4d062298df58c2248393ef9e8b154493c347c62e2756e25be29c16277396046d6eaa4b11bd174f34e6403fff6aaca9fb30fa1ff46d
-  languageName: node
-  linkType: hard
-
-"whatwg-url@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "whatwg-url@npm:5.0.0"
-  dependencies:
-    tr46: "npm:~0.0.3"
-    webidl-conversions: "npm:^3.0.0"
-  checksum: 10c0/1588bed84d10b72d5eec1d0faa0722ba1962f1821e7539c535558fb5398d223b0c50d8acab950b8c488b4ba69043fd833cc2697056b167d8ad46fac3995a55d5
   languageName: node
   linkType: hard
 

@@ -466,7 +466,7 @@ export class TokenLauncherWorker extends zkCloudWorker {
     let txSent;
     let sent = false;
     const start = Date.now();
-    const timeout = 60 * 1000;
+    const timeout = 120 * 1000;
     while (!sent) {
       txSent = await tx.safeSend();
       if (txSent.status == "pending") {
@@ -501,7 +501,11 @@ export class TokenLauncherWorker extends zkCloudWorker {
         });
       }
     }
-    if (this.cloud.isLocalCloud && txSent?.status === "pending") {
+    if (
+      this.cloud.isLocalCloud &&
+      txSent?.status === "pending" &&
+      this.cloud.chain !== "zeko"
+    ) {
       const txIncluded = await txSent.safeWait();
       console.log(
         `${memo} tx included into block: hash: ${txIncluded.hash} status: ${txIncluded.status}`

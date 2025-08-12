@@ -109,8 +109,8 @@ let adminKey = useRandomTokenAddress
 const tokenId = TokenId.derive(tokenKey);
 
 describe("Token Launchpad Worker", async () => {
-  const symbol = "TEST";
-  const name = "Test Token";
+  const symbol = bondingCurve ? "MEME" : "TEST";
+  const name = bondingCurve ? "Meme Token" : "Test Token";
   const src = "https://minatokens.com";
   let keys: TestPublicKey[];
   let admin: TestPublicKey;
@@ -161,7 +161,7 @@ describe("Token Launchpad Worker", async () => {
         },
         async () => {
           const senderUpdate = AccountUpdate.createSigned(topup);
-          senderUpdate.balance.subInPlace(1000000000);
+          senderUpdate.balance.subInPlace(100000000);
           senderUpdate.send({ to: wallet, amount: 1_000_000_000 });
         }
       );

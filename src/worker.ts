@@ -526,13 +526,12 @@ export class TokenLauncherWorker extends zkCloudWorker {
           txHash: txSent?.hash,
         } as any,
       });
+    const success =
+      txSent?.hash !== undefined && txSent?.status == "pending" ? true : false;
     return this.stringifyJobResult({
-      success:
-        txSent?.hash !== undefined && txSent?.status == "pending"
-          ? true
-          : false,
+      success,
       tx: txJSON,
-      hash: txSent?.hash,
+      hash: success || this.cloud.chain !== "zeko" ? txSent?.hash : undefined,
       status: txSent?.status,
       error: String(txSent?.errors ?? ""),
     });

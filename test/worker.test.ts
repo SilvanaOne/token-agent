@@ -89,6 +89,15 @@ const DELAY = chain === "local" ? 1000 : chain === "zeko" ? 3000 : 10000;
 if (chain === "zeko:alphanet")
   throw new Error("zeko:alphanet is not supported in worker");
 
+if (
+  chain !== "local" &&
+  chain !== "devnet" &&
+  chain !== "lightnet" &&
+  chain !== "mainnet" &&
+  chain !== "zeko"
+)
+  throw new Error("Invalid chain name");
+
 const api = new TokenAPI({
   jwt: useLocalCloudWorker ? "local" : JWT,
   zkcloudworker,

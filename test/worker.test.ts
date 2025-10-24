@@ -85,16 +85,17 @@ const {
   bondingCurve,
 } = args;
 
-const DELAY = chain === "local" ? 1000 : chain === "zeko" ? 3000 : 10000;
+const DELAY =
+  chain === "mina:local" ? 1000 : chain === "zeko:testnet" ? 3000 : 10000;
 if (chain === "zeko:alphanet")
   throw new Error("zeko:alphanet is not supported in worker");
 
 if (
-  chain !== "local" &&
-  chain !== "devnet" &&
-  chain !== "lightnet" &&
-  chain !== "mainnet" &&
-  chain !== "zeko"
+  chain !== "mina:local" &&
+  chain !== "mina:devnet" &&
+  chain !== "mina:lightnet" &&
+  chain !== "mina:mainnet" &&
+  chain !== "zeko:testnet"
 )
   throw new Error("Invalid chain name");
 
@@ -137,12 +138,12 @@ describe("Token Launchpad Worker", async () => {
   it(`should initialize blockchain`, async () => {
     Memory.info("initializing blockchain");
 
-    if (chain === "local" || chain === "lightnet") {
+    if (chain === "mina:local" || chain === "mina:lightnet") {
       console.log("local chain:", chain);
-      keys = (await initBlockchain(chain, 10)).keys;
+      keys = (await initBlockchain({ chain, deployersNumber: 10 })).keys;
     } else {
       console.log("non-local chain:", chain);
-      await initBlockchain(chain);
+      await initBlockchain({ chain });
       keys = devnetKeys;
     }
     assert(keys.length >= 8, "Invalid keys");
@@ -172,7 +173,7 @@ describe("Token Launchpad Worker", async () => {
         },
         async () => {
           const senderUpdate = AccountUpdate.createSigned(topup);
-          senderUpdate.balance.subInPlace(100000000);
+          senderUpdate.balance.subInPlace(1_000_000_000);
           senderUpdate.send({ to: wallet, amount: 1_000_000_000 });
         }
       );
@@ -373,7 +374,7 @@ describe("Token Launchpad Worker", async () => {
       console.timeEnd("deployed");
       const txStatus2 = await getTxStatusFast({ hash });
       console.log("txStatus deploy post", txStatus2);
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
     });
   }
@@ -445,7 +446,7 @@ describe("Token Launchpad Worker", async () => {
       }
       Memory.info("minted");
       console.timeEnd("minted");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
       await fetchMinaAccount({
         publicKey: adminKey,
@@ -523,7 +524,7 @@ describe("Token Launchpad Worker", async () => {
       }
       Memory.info("redeemed");
       console.timeEnd("redeemed");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
       await fetchMinaAccount({
         publicKey: adminKey,
@@ -646,7 +647,7 @@ describe("Token Launchpad Worker", async () => {
 
       Memory.info("offered");
       console.timeEnd("offered");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
     });
 
     it(`should buy tokens`, async () => {
@@ -720,7 +721,7 @@ describe("Token Launchpad Worker", async () => {
 
       Memory.info("bought");
       console.timeEnd("bought");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
     });
 
@@ -796,7 +797,7 @@ describe("Token Launchpad Worker", async () => {
 
       Memory.info("withdrawn");
       console.timeEnd("withdrawn");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
     });
   }
@@ -872,7 +873,7 @@ describe("Token Launchpad Worker", async () => {
       }
       Memory.info("transferred");
       console.timeEnd("transferred");
-      if (chain !== "local") await sleep(DELAY);
+      if (chain !== "mina:local") await sleep(DELAY);
       await printBalances();
     });
   }

@@ -1,9 +1,9 @@
-import { blockchain } from "@silvana-one/mina-utils";
+import { CanonicalBlockchain } from "@silvana-one/api";
 
-let chain: blockchain = "local" as blockchain;
+let chain: CanonicalBlockchain = "mina:local" as CanonicalBlockchain;
 
 export function processArguments(): {
-  chain: blockchain;
+  chain: CanonicalBlockchain;
   compile: boolean;
   deploy: boolean;
   transfer: boolean;
@@ -24,14 +24,14 @@ export function processArguments(): {
 } {
   const chainName = process.env.CHAIN;
   if (
-    chainName !== "local" &&
-    chainName !== "devnet" &&
-    chainName !== "lightnet" &&
-    chainName !== "mainnet" &&
-    chainName !== "zeko"
+    chainName !== "mina:local" &&
+    chainName !== "mina:devnet" &&
+    chainName !== "mina:lightnet" &&
+    chainName !== "mina:mainnet" &&
+    chainName !== "zeko:testnet"
   )
     throw new Error("Invalid chain name");
-  chain = chainName as blockchain;
+  chain = chainName as CanonicalBlockchain;
 
   return {
     chain,

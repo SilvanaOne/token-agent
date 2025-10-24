@@ -5,6 +5,6 @@ import { TokenLauncherWorker } from "./src/worker.js";
 
 export async function zkcloudworker(cloud: Cloud): Promise<zkCloudWorker> {
   await initializeBindings();
-  await initBlockchain(cloud.chain);
+  await initBlockchain({ chain: cloud.chain });
   return new TokenLauncherWorker(cloud);
 }

@@ -1,6 +1,6 @@
 {
   "name": "token-agent",
-  "version": "0.1.12",
+  "version": "0.2.1",
   "author": "DFST",
   "type": "module",
   "license": "Apache-2.0",
@@ -8,40 +8,39 @@
     "test": "node --trace-uncaught --loader=ts-node/esm --enable-source-maps -r dotenv/config --require dotenv/config --env-file=.env --test",
     "test-next": "NODE_NO_WARNINGS=1 node --enable-source-maps -r source-map-support/register -r dotenv/config --require dotenv/config --env-file=.env --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' --test",
     "test:watch": "node --test --watch test/**/*.test.{js,ts}",
-    "compile": "yarn test ./test/compile-testnet.test.ts && yarn test ./test/compile-mainnet.test.ts",
-    "local": "CHAIN=local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
-    "swap": "CHAIN=local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
-    "local:bc": "CHAIN=local CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
+    "local": "CHAIN=mina:local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
+    "swap": "CHAIN=mina:local CLOUD=local COMPILE=false DEBUG=false yarn test ./test/worker.test.ts",
+    "local:bc": "CHAIN=mina:local CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
     "devnet:bc": "CHAIN=devnet CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
-    "zeko:bc": "CHAIN=zeko CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
-    "local:advanced": "CHAIN=local CLOUD=local COMPILE=false ADVANCED_ADMIN=true WHITELIST_OFFER=true NODE_OPTIONS='--inspect --trace-uncaught' npm run test ./test/worker.test.ts",
-    "lightnet": "CHAIN=lightnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
-    "devnet:local": "CHAIN=devnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
-    "devnet:zkcloudworker": "CHAIN=devnet CLOUD=zkcloudworker COMPILE=false npm run test ./test/worker.test.ts",
-    "zeko:local": "CHAIN=zeko CLOUD=local COMPILE=false  yarn test ./test/worker.test.ts",
-    "zeko:zkcloudworker": "CHAIN=zeko CLOUD=zkcloudworker COMPILE=false yarn test ./test/worker.test.ts",
+    "zeko:bc": "CHAIN=zeko:testnet CLOUD=local COMPILE=false BONDING_CURVE=true DEBUG=false yarn test ./test/worker.test.ts",
+    "local:advanced": "CHAIN=mina:local CLOUD=local COMPILE=false ADVANCED_ADMIN=true WHITELIST_OFFER=true NODE_OPTIONS='--inspect --trace-uncaught' npm run test ./test/worker.test.ts",
+    "lightnet": "CHAIN=mina:lightnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
+    "devnet:local": "CHAIN=mina:devnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
+    "devnet:zkcloudworker": "CHAIN=mina:devnet CLOUD=zkcloudworker COMPILE=false npm run test ./test/worker.test.ts",
+    "zeko:local": "CHAIN=zeko:testnet CLOUD=local COMPILE=false  yarn test ./test/worker.test.ts",
+    "zeko:zkcloudworker": "CHAIN=zeko:testnet CLOUD=zkcloudworker COMPILE=false yarn test ./test/worker.test.ts",
     "zeko:zkcloudworker:advanced": "CHAIN=zeko CLOUD=zkcloudworker COMPILE=false ADVANCED_ADMIN=true WHITELIST_OFFER=true yarn test ./test/worker.test.ts"
   },
   "node": {
     "version": ">=22.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "dotenv": "^17.2.2",
+    "@types/node": "^24.9.1",
+    "dotenv": "^17.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@4.9.4",
+  "packageManager": "yarn@4.10.3",
   "dependencies": {
-    "@silvana-one/abi": "^1.0.31",
-    "@silvana-one/api": "^1.0.31",
-    "@silvana-one/mina-prover": "^1.0.31",
-    "@silvana-one/mina-utils": "^1.0.31",
-    "@silvana-one/nft": "^1.0.31",
-    "@silvana-one/prover": "^1.0.31",
-    "@silvana-one/storage": "^1.0.31",
-    "@silvana-one/token": "^1.0.31",
-    "@silvana-one/upgradable": "^1.0.31",
-    "o1js": "2.4.0"
+    "@silvana-one/abi": "^1.1.4",
+    "@silvana-one/api": "^1.1.4",
+    "@silvana-one/mina-prover": "^1.1.4",
+    "@silvana-one/mina-utils": "^1.1.4",
+    "@silvana-one/nft": "^1.1.4",
+    "@silvana-one/prover": "^1.1.4",
+    "@silvana-one/storage": "^1.1.4",
+    "@silvana-one/token": "^1.1.4",
+    "@silvana-one/upgradable": "^1.1.4",
+    "o1js": "2.10.0"
   }
 }

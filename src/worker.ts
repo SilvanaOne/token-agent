@@ -63,7 +63,7 @@ export class TokenLauncherWorker extends zkCloudWorker {
       console.time("compiled");
       const vk =
         tokenVerificationKeys[
-          this.cloud.chain === "mainnet" ? "mainnet" : "devnet"
+          this.cloud.chain === "mina:mainnet" ? "mainnet" : "devnet"
         ].vk;
       for (const hash of verificationKeyHashes) {
         const [key, item] =
@@ -474,7 +474,10 @@ export class TokenLauncherWorker extends zkCloudWorker {
         console.log(
           `${memo} tx sent: hash: ${txSent.hash} status: ${txSent.status}`
         );
-      } else if (this.cloud.chain === "zeko" && Date.now() - start < timeout) {
+      } else if (
+        this.cloud.chain === "zeko:testnet" &&
+        Date.now() - start < timeout
+      ) {
         console.log("Retrying Zeko tx", txSent.status, txSent.errors);
         await sleep(10000);
       } else {
@@ -504,7 +507,7 @@ export class TokenLauncherWorker extends zkCloudWorker {
     if (
       this.cloud.isLocalCloud &&
       txSent?.status === "pending" &&
-      this.cloud.chain !== "zeko"
+      this.cloud.chain !== "zeko:testnet"
     ) {
       const txIncluded = await txSent.safeWait();
       console.log(
@@ -531,7 +534,10 @@ export class TokenLauncherWorker extends zkCloudWorker {
     return this.stringifyJobResult({
       success,
       tx: txJSON,
-      hash: success || this.cloud.chain !== "zeko" ? txSent?.hash : undefined,
+      hash:
+        success || this.cloud.chain !== "zeko:testnet"
+          ? txSent?.hash
+          : undefined,
       status: txSent?.status,
       error: String(txSent?.errors ?? ""),
     });

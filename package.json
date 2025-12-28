@@ -1,6 +1,6 @@
 {
   "name": "token-agent",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "DFST",
   "type": "module",
   "license": "Apache-2.0",
@@ -25,22 +25,22 @@
     "version": ">=22.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.9.1",
+    "@types/node": "^25.0.3",
     "dotenv": "^17.2.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@4.10.3",
   "dependencies": {
-    "@silvana-one/abi": "^1.1.4",
-    "@silvana-one/api": "^1.1.4",
-    "@silvana-one/mina-prover": "^1.1.4",
-    "@silvana-one/mina-utils": "^1.1.4",
-    "@silvana-one/nft": "^1.1.4",
-    "@silvana-one/prover": "^1.1.4",
-    "@silvana-one/storage": "^1.1.4",
-    "@silvana-one/token": "^1.1.4",
-    "@silvana-one/upgradable": "^1.1.4",
-    "o1js": "2.10.0"
+    "@silvana-one/abi": "^1.1.20",
+    "@silvana-one/api": "^1.1.20",
+    "@silvana-one/mina-prover": "^1.1.20",
+    "@silvana-one/mina-utils": "^1.1.20",
+    "@silvana-one/nft": "^1.1.20",
+    "@silvana-one/prover": "^1.1.20",
+    "@silvana-one/storage": "^1.1.20",
+    "@silvana-one/token": "^1.1.20",
+    "@silvana-one/upgradable": "^1.1.20",
+    "o1js": "2.12.0"
   }
 }

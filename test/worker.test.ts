@@ -181,8 +181,26 @@ describe("Token Launchpad Worker", async () => {
       await sendTx({ tx: topupTx, description: "topup" });
     }
 
-    console.log("contract address:", tokenKey.toBase58());
-    console.log("admin:", admin.toBase58());
+    console.log("admin (deployer):", admin.toBase58());
+    // Log full keypairs (public + private) for every generated contract address so
+    // the deployed contracts can be upgraded later — the private key is required to
+    // authorize a future upgrade and is otherwise unrecoverable.
+    console.log("token contract:", {
+      publicKey: tokenKey.toBase58(),
+      privateKey: tokenKey.key.toBase58(),
+    });
+    console.log("admin contract:", {
+      publicKey: adminKey.toBase58(),
+      privateKey: adminKey.key.toBase58(),
+    });
+    console.log("offer contract:", {
+      publicKey: offer.toBase58(),
+      privateKey: offer.key.toBase58(),
+    });
+    console.log("bid contract:", {
+      publicKey: bid.toBase58(),
+      privateKey: bid.key.toBase58(),
+    });
     await printBalances();
   });
 

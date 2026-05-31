@@ -5,7 +5,7 @@
 ### Run local tests
 
 ```sh
-yarn local
+npm run local
 ```
 
 ### Run tests on Lightnet
@@ -13,7 +13,7 @@ yarn local
 ```sh
 zk lightnet start
 zk lightnet explorer
-yarn lightnet
+npm run lightnet
 ```
 
 ### Run tests on Devnet
@@ -21,13 +21,13 @@ yarn lightnet
 Using local worker
 
 ```sh
-yarn devnet.local
+npm run devnet:local
 ```
 
 Using zkCloudWorker
 
 ```sh
-yarn devnet.zkcloudworker
+npm run devnet:zkcloudworker
 ```
 
 ### Run tests on Zeko
@@ -35,13 +35,13 @@ yarn devnet.zkcloudworker
 Using local worker
 
 ```sh
-yarn zeko.local
+npm run zeko:local
 ```
 
 Using zkCloudWorker
 
 ```sh
-yarn zeko.zkcloudworker
+npm run zeko:zkcloudworker
 ```
 
 Faucet: https://zeko.io/faucet

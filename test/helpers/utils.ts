@@ -28,7 +28,8 @@ export function processArguments(): {
     chainName !== "mina:devnet" &&
     chainName !== "mina:lightnet" &&
     chainName !== "mina:mainnet" &&
-    chainName !== "zeko:testnet"
+    chainName !== "zeko:testnet" &&
+    chainName !== "mina:testnet"
   )
     throw new Error("Invalid chain name");
   chain = chainName as CanonicalBlockchain;

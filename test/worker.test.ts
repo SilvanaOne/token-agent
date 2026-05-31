@@ -95,7 +95,8 @@ if (
   chain !== "mina:devnet" &&
   chain !== "mina:lightnet" &&
   chain !== "mina:mainnet" &&
-  chain !== "zeko:testnet"
+  chain !== "zeko:testnet" &&
+  chain !== "mina:testnet"
 )
   throw new Error("Invalid chain name");
 
@@ -175,7 +176,7 @@ describe("Token Launchpad Worker", async () => {
           const senderUpdate = AccountUpdate.createSigned(topup);
           senderUpdate.balance.subInPlace(1_000_000_000);
           senderUpdate.send({ to: wallet, amount: 1_000_000_000 });
-        }
+        },
       );
       topupTx.sign([topup.key]);
       await sendTx({ tx: topupTx, description: "topup" });
@@ -231,13 +232,13 @@ describe("Token Launchpad Worker", async () => {
         // calculate the size of the contract - the sum or rows for each method
         const size = Object.values(contract.result).reduce(
           (acc, method) => acc + (method as any).rows,
-          0
+          0,
         ) as number;
         // calculate percentage rounded to 0 decimal places
         const percentage = Math.round(((size * 100) / maxRows) * 100) / 100;
 
         console.log(
-          `method's total size for a ${contract.name} is ${size} rows (${percentage}% of max ${maxRows} rows)`
+          `method's total size for a ${contract.name} is ${size} rows (${percentage}% of max ${maxRows} rows)`,
         );
         if (contract.skip !== true)
           for (const method in contract.result) {
@@ -308,8 +309,8 @@ describe("Token Launchpad Worker", async () => {
       const adminType = bondingCurve
         ? "bondingCurve"
         : advancedAdmin
-        ? "advanced"
-        : "standard";
+          ? "advanced"
+          : "standard";
       await fetchMinaAccount({ publicKey: admin, force: true });
       const args:
         | LaunchTokenAdvancedAdminParams
@@ -597,7 +598,7 @@ describe("Token Launchpad Worker", async () => {
         const nonce = Number(Mina.getAccount(seller).nonce.toBigint());
         console.log(
           "Building offer transaction for contract:",
-          contract.toBase58()
+          contract.toBase58(),
         );
         console.log("Seller:", seller.toBase58());
         console.log("Contract:", contract.toBase58());
@@ -932,7 +933,7 @@ async function printBalances() {
               (tokenBalanceDiff / 1_000_000_000).toString() +
               ")"
             : ""
-        }`
+        }`,
       );
       account.balance = balance;
       account.tokenBalance = tb;

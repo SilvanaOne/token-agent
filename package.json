@@ -1,6 +1,6 @@
 {
   "name": "token-agent",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "DFST",
   "type": "module",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "lightnet": "CHAIN=mina:lightnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
     "devnet:local": "CHAIN=mina:devnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
     "mesa:local": "CHAIN=mina:testnet CLOUD=local COMPILE=false npm run test ./test/worker.test.ts",
-    "mesa:local:restart": "CHAIN=mina:testnet CLOUD=local KEYS=data/B62qp65VamDpn65STgnrKr4yJS4TcAXYAFA4wzdXru8ofuQtFApkoWh.json COMPILE=false npm run test ./test/worker.test.ts",
+    "mesa:local:restart": "CHAIN=mina:testnet CLOUD=local KEYS=data/B62qqCA4fzi1cv6na7YtbAhXoaFn6Sf6faj8KGy9UzHMyv5X2fyiowy.json COMPILE=false npm run test ./test/worker.test.ts",
     "devnet:zkcloudworker": "CHAIN=mina:devnet CLOUD=zkcloudworker COMPILE=false npm run test ./test/worker.test.ts",
     "zeko:local": "CHAIN=zeko:testnet CLOUD=local COMPILE=false  npm run test ./test/worker.test.ts",
     "zeko:zkcloudworker": "CHAIN=zeko:testnet CLOUD=zkcloudworker COMPILE=false npm run test ./test/worker.test.ts",

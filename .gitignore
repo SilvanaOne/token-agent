@@ -16,3 +16,4 @@ dist/
 .zkcloudworker/
 .silvana/
 data/
+.claude/

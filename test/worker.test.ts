@@ -1,5 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
+import { writeFileSync, readFileSync, mkdirSync, existsSync } from "node:fs";
 import {
   Mina,
   AccountUpdate,
@@ -83,6 +84,7 @@ const {
   updateOfferWhitelist,
   updateBidWhitelist,
   bondingCurve,
+  keysFile,
 } = args;
 
 const DELAY =
@@ -113,12 +115,36 @@ let accounts: {
   tokenBalance?: number;
 }[] = [];
 
-let tokenKey = useRandomTokenAddress
-  ? TestPublicKey.random()
-  : tokenContractKey;
-let adminKey = useRandomTokenAddress
-  ? TestPublicKey.random()
-  : adminContractKey;
+let tokenKey: TestPublicKey;
+let adminKey: TestPublicKey;
+if (keysFile) {
+  // Restart mode: reuse an already-deployed token+admin contract from a saved keys file.
+  if (!existsSync(keysFile))
+    throw new Error(
+      `KEYS file not found: ${keysFile}. Run a deploy first (e.g. \`npm run mesa:local\`) and point KEYS at the generated ./data/<tokenPublicKey>.json, or create that file from the deployed token's private keys.`,
+    );
+  let saved: { tokenContract?: { privateKey?: string }; adminContract?: { privateKey?: string } };
+  try {
+    saved = JSON.parse(readFileSync(keysFile, "utf8"));
+  } catch (e) {
+    throw new Error(
+      `KEYS file is not valid JSON: ${keysFile}: ${(e as Error).message}`,
+    );
+  }
+  if (!saved.tokenContract?.privateKey || !saved.adminContract?.privateKey)
+    throw new Error(
+      `KEYS file ${keysFile} must contain tokenContract.privateKey and adminContract.privateKey`,
+    );
+  tokenKey = TestPublicKey.fromBase58(saved.tokenContract.privateKey);
+  adminKey = TestPublicKey.fromBase58(saved.adminContract.privateKey);
+  console.log("restart mode: loaded deployed contracts from", keysFile);
+} else if (useRandomTokenAddress) {
+  tokenKey = TestPublicKey.random();
+  adminKey = TestPublicKey.random();
+} else {
+  tokenKey = tokenContractKey;
+  adminKey = adminContractKey;
+}
 const tokenId = TokenId.derive(tokenKey);
 
 describe("Token Launchpad Worker", async () => {
@@ -202,6 +228,36 @@ describe("Token Launchpad Worker", async () => {
       publicKey: bid.toBase58(),
       privateKey: bid.key.toBase58(),
     });
+
+    // On the canonical (non-restart) run, persist all keypairs to
+    // ./data/<tokenContractPublicKey>.json so the deployment can be reused later
+    // via the KEYS env var (restart mode) to re-run the flow against it.
+    // Skipped on local/lightnet, where keys are ephemeral and not reusable.
+    if (!keysFile && chain !== "mina:local" && chain !== "mina:lightnet") {
+      if (!existsSync("./data")) mkdirSync("./data", { recursive: true });
+      const kp = (k: TestPublicKey) => ({
+        publicKey: k.toBase58(),
+        privateKey: k.key.toBase58(),
+      });
+      const keysData = {
+        tokenContract: kp(tokenKey),
+        adminContract: kp(adminKey),
+        offer: kp(offer),
+        bid: kp(bid),
+        deployer: kp(admin),
+        user1: kp(user1),
+        user2: kp(user2),
+        user3: kp(user3),
+        user4: kp(user4),
+        topup: kp(topup),
+        bidder: kp(bidder),
+        buyer: kp(buyer),
+        wallet: { publicKey: wallet.toBase58() },
+      };
+      const file = `./data/${tokenKey.toBase58()}.json`;
+      writeFileSync(file, JSON.stringify(keysData, null, 2));
+      console.log("saved keys to", file);
+    }
     await printBalances();
   });
 
@@ -297,7 +353,7 @@ describe("Token Launchpad Worker", async () => {
     });
   }
 
-  if (deploy) {
+  if (deploy && !keysFile) {
     it(`should deploy contract`, async () => {
       console.log("deploying contract");
       console.time("deployed");
@@ -569,7 +625,7 @@ describe("Token Launchpad Worker", async () => {
     it(`should offer tokens`, async () => {
       console.time("offered");
       const hashArray: string[] = [];
-      const offerPrice = UInt64.from(2e8);
+      const offerPrice = UInt64.from(2e7);
       const offeredAmount = UInt64.from(200e9);
       const boughtAmount = UInt64.from(50e9);
       const withdrawAmount = UInt64.from(150e9);

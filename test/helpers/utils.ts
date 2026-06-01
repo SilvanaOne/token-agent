@@ -21,6 +21,7 @@ export function processArguments(): {
   updateBidWhitelist: boolean;
   useLocalCloudWorker: boolean;
   useRandomTokenAddress: boolean;
+  keysFile: string | undefined;
 } {
   const chainName = process.env.CHAIN;
   if (
@@ -53,5 +54,6 @@ export function processArguments(): {
     updateAdminWhitelist: process.env.UPDATE_WHITELIST_ADMIN === "true",
     updateOfferWhitelist: process.env.UPDATE_WHITELIST_OFFER === "true",
     bondingCurve: process.env.BONDING_CURVE === "true",
+    keysFile: process.env.KEYS,
   };
 }
